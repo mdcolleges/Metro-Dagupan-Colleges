@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Enrollment Form</title>
+  <link rel="stylesheet" href="./css/enroll-form.css" />
+</head>
+<body>
+    <header>
+        <div class="header" id="stickyHeader">METRO-DAGUPAN COLLEGES</div>
+        <div class="nav">
+          <a href="index.html">Home</a>
+          <a href="about.html">About</a>
+          <a href="program.html">Programs</a>
+          <a href="admission.html">Admissions</a>
+          <a href="course.html">Courses</a>
+          <a href="#">Enroll</a>
+          <div class="dropdown">
+            <a href="#">More ▼</a>
+            <div class="dropdown-content">
+              <a href="#">Alumni</a>
+              <a href="event.html">Events</a>
+              <a href="#">Research</a>
+            </div>
+          </div>
+          <a href="#">Contact</a>
+        </div>
+      </header>
+      <div class="wrap">
+  <div class="form-wrapper">
+    <div class="form-container">
+      <h2>Enrollment Form</h2>
+      <form action="#" method="post" enctype="multipart/form-data" class="enroll-form">
+        
+        <div class="form-group">
+          <label for="fullname">Full Name</label>
+          <input type="text" id="fullname" name="fullname" required />
+        </div>
+
+        <div class="form-group">
+          <label for="email">Email Address</label>
+          <input type="email" id="email" name="email" required />
+        </div>
+
+        <div class="form-group">
+          <label for="phone">Phone Number</label>
+          <input type="tel" id="phone" name="phone" required />
+        </div>
+
+        <div class="form-group">
+          <label for="course">Select Course</label>
+          <select id="course" name="course" required>
+            <option value="">-- Choose a course --</option>
+            <option value="criminology">Criminology</option>
+            <option value="comsci">Computer Science (ComSci)</option>
+            <option value="bsed">Bachelor of Secondary Education (BSEd)</option>
+            <option value="btled">Bachelor of Technology and Livelihood Education (BTLEd)</option>
+          </select>
+        </div>
+
+        <div class="form-group">
+          <label for="birthcert">Upload Birth Certificate (Image or PDF)</label>
+          <input type="file" id="birthcert" name="birthcert" accept=".jpg,.jpeg,.png,.pdf" required />
+        </div>
+
+        <div class="form-group">
+          <label for="form137">Upload Form 137 (Image or PDF)</label>
+          <input type="file" id="form137" name="form137" accept=".jpg,.jpeg,.png,.pdf" required />
+        </div>
+
+        <div class="form-group">
+          <label for="others">Other Requirements (Optional)</label>
+          <input type="file" id="others" name="others[]" accept=".jpg,.jpeg,.png,.pdf" multiple />
+        </div>
+
+        <button type="submit">Submit Enrollment</button>
+      </form>
+    </div>
+  </div>
+</div>
+<footer>
+  <div class="footer-container">
+    <div class="footer-section about">
+      <h2>About Us</h2>
+      <p>
+        A private, TESDA‑ and CHED‑accredited institution in Mangaldan (Serafica St.), founded in 1996. Offers vocational, undergraduate degrees in Education, Criminology, Engineering, IT, Tourism, and business—and also features a Special Studies online program 
+      </p>
+    </div>
+
+    <div class="footer-section contact">
+      <h2>Contact Us</h2>
+      <p><strong>Address:</strong>Salay, Mangaldan Pangasinan</p>
+      <p><strong>Email:</strong> romae_mdc@yahoo.com</p>
+      <p><strong>Phone:</strong> (075) 599 6367</p>
+    </div>
+
+    <div class="footer-section links">
+      <h2>Quick Links</h2>
+      <ul>
+        <li><a href="#">Admissions</a></li>
+        <li><a href="#">Academics</a></li>
+        <li><a href="#">Events</a></li>
+        <li><a href="#">Contact</a></li>
+      </ul>
+    </div>
+
+    <div class="footer-section social">
+      <h2>Follow Us</h2>
+      <a href="#"><i class="fab fa-facebook"></i></a>
+      <a href="#"><i class="fab fa-twitter"></i></a>
+      <a href="#"><i class="fab fa-instagram"></i></a>
+      <a href="#"><i class="fab fa-linkedin"></i></a>
+    </div>
+  </div>
+
+  <div class="footer-bottom">
+    <p>&copy; 2025 Metro-Dagupan Collges. All rights reserved.</p>
+  </div>
+</footer>
+</body>
+</html>

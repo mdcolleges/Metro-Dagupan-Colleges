@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <link rel="stylesheet" href="./css/course.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <header>
+        <div class="header">METRO-DAGUPAN COLLEGES</div>
+        <div class="nav">
+          <a href="index.html">Home</a>
+          <a href="about.html">About</a>
+          <a href="program.html">Programs</a>
+          <a href="admission.html">Admissions</a>
+          <a href="#">Courses</a>
+          <a href="enroll-form.html">Enroll</a>
+          <div class="dropdown">
+            <a href="#">More ▼</a>
+            <div class="dropdown-content">
+              <a href="#">Alumni</a>
+              <a href="event.html">Events</a>
+              <a href="#">Research</a>
+            </div>
+          </div>
+          <a href="#">Contact</a>
+        </div>
+      </header>
+ 
+        <!-- courses -->
+        <section id="courses">
+            <h1>Courses</h1>
+            <div class="container">
+              <div class="course">
+                <img src="MDC Logos 2022/CRIM LOGO_CLEAR.png" alt="Mathematics" />
+                <h3>Criminology</h3>
+                <div class="details">
+                  <p>
+                    Criminology offers a rich, multidisciplinary education that blends sociology, psychology, law, forensics, and policy studies to help you understand why crimes happen and how societies respond 
+                    . It develops strong analytical and research skills
+                  </p>
+                  <button class="enroll-btn" onclick="showPopup()">Enroll Now</button>
+                </div>
+              </div>
+              <div class="course">
+                <img src="MDC Logos 2022/CBAT.COM Logo2.png" alt="Mathematics" />
+                <h3>College Of Business Administration Tourism And Computer Sciences</h3>
+                <div class="details" >
+                  <p>
+                    The College of Business Administration, Tourism & Computer Science offers undergraduate degrees in Business Administration (e.g., Marketing, Finance, HR, Customs), Tourism and Hospitality Management, and Computer Science/IT (including BSCS, BSIT, and diplomas), blending theory with hands‑on training through specialized labs, professional software, internships, and real-world immersion to prepare graduates for careers in business, tourism, hospitality, software development, cybersecurity, and IT services 
+                  </p>
+                  <button class="enroll-btn" onclick="showPopup()">Enroll Now</button>
+                </div>
+              </div>
+              <div class="course">
+                <img src="MDC Logos 2022/CoTE Logo.png" alt="Mathematics" />
+                <h3>College Of Teachers Education</h3>
+                <div class="details">
+                  <p>
+                    The College Of Teacher Education (CoTE)  central administrative body overseeing educator licensure programs—coordinating curriculum development, clinical experiences, licensure applications, and state-level compliance to ensure high-quality preparation for future teachers, administrators, and school service professionals
+                  </p>
+                  <button class="enroll-btn" onclick="showPopup()">Enroll Now</button>
+                </div>
+              </div>
+              <div class="course">
+                <img src="MDC Logos 2022/Graduate School logo.jpg" alt="Mathematics" />
+                <h3>Institututes Of Graduates</h3>
+                <div class="details">
+                  <p>
+                    An institute is a specialized academic division within a college or university focused on a specific field—conducting research, offering targeted instruction, and often providing vocational training or certification—in contrast to a college, which typically offers broader undergraduate (and sometimes graduate) degree programs across various disciplines
+                  </p>
+                  <button class="enroll-btn" onclick="showPopup()">Enroll Now</button>
+                </div>
+              </div>
+              <div class="course">
+                <img src="MDC Logos 2022/HS NEW.png" alt="Mathematics" />
+                <h3>Productivity High School</h3>
+                <div class="details">
+                  <p>
+                    High school is a form of secondary education typically covering grades 9 through 12 (ages ~14–18) that follows elementary or junior high school. It prepares students for higher education or the workforce, offering core academic subjects alongside electives and extracurricular activities
+                  </p>
+                  <button class="enroll-btn" onclick="showPopup()">Enroll Now</button>
+                </div>
+              </div>
+            
+                </div>
+
+            </div>
+
+
+             <!-- Pop-up -->
+  <div class="popup" id="popup">
+    <div class="popup-content">
+      <h3>⚠️ Choose Wisely</h3>
+      <p>You're enrolling in your dream course. Make sure it's the right fit for your goals!</p>
+      <button class="close-btn"> <a href="enroll-form.html">Got it</a></button>
+    </div>
+  </div>
+
+  <script>
+    function showPopup() {
+      document.getElementById('popup').style.display = 'block';
+    }
+
+    function hidePopup() {
+      document.getElementById('popup').style.display = 'enroll-form.html';
+    }
+  </script>
+
+          </section>
+          <footer>
+            <div class="footer-container">
+              <div class="footer-section about">
+                <h2>About Us</h2>
+                <p>
+                  A private, TESDA‑ and CHED‑accredited institution in Mangaldan (Serafica St.), founded in 1996. Offers vocational, undergraduate degrees in Education, Criminology, Engineering, IT, Tourism, and business—and also features a Special Studies online program 
+                </p>
+              </div>
+      
+              <div class="footer-section contact">
+                <h2>Contact Us</h2>
+                <p><strong>Address:</strong>Salay, Mangaldan Pangasinan</p>
+                <p><strong>Email:</strong> romae_mdc@yahoo.com</p>
+                <p><strong>Phone:</strong> (075) 599 6367</p>
+              </div>
+      
+              <div class="footer-section links">
+                <h2>Quick Links</h2>
+                <ul>
+                  <li><a href="#">Admissions</a></li>
+                  <li><a href="#">Academics</a></li>
+                  <li><a href="#">Events</a></li>
+                  <li><a href="#">Contact</a></li>
+                </ul>
+              </div>
+      
+              <div class="footer-section social">
+                <h2>Follow Us</h2>
+                <a href="#"><i class="fab fa-facebook"></i></a>
+                <a href="#"><i class="fab fa-twitter"></i></a>
+                <a href="#"><i class="fab fa-instagram"></i></a>
+                <a href="#"><i class="fab fa-linkedin"></i></a>
+              </div>
+            </div>
+      
+            <div class="footer-bottom">
+              <p>&copy; 2025 Metro-Dagupan Collges. All rights reserved.</p>
+            </div>
+          </footer>
+
+          
+</body>
+</html>
