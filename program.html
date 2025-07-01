@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="css/program.css" />
+    <title>Program</title>
+  </head>
+  <body>
+    <header>
+      <div class="header">METRO-DAGUPAN COLLEGES</div>
+      <div class="nav">
+        <a href="index.html">Home</a>
+        <a href="about.html">About</a>
+        <a href="#">Programs</a>
+        <a href="admission.html">Admissions</a>
+        <a href="course.html">Courses</a>
+        <a href="enroll-form.html">Enroll</a>
+        <div class="dropdown">
+          <a href="#">More ▼</a>
+          <div class="dropdown-content">
+            <a href="#">Alumni</a>
+            <a href="event.html">Events</a>
+            <a href="#">Research</a>
+          </div>
+        </div>
+        <a href="#">Contact</a>
+      </div>
+    </header>
+    <div class="scholarship-section">
+      <h1>SCHOOL PROVIDED SCHOLARSHIP</h1>
+    
+    <div class="container">
+      <!-- Scholarship 1 -->
+      <div class="scholarship">
+          <h2>T.E.S SCHOLARSHIP</h2>
+          <p>Eligibility: Lorem ipsum dolor sit.</p>
+          <button class="btn" onclick="openModal('modal1')">Learn More</button>
+      </div>
+  
+      <!-- Scholarship 2 -->
+      <div class="scholarship">
+          <h2>STUDENT ASSISTANT</h2>
+          <p>Eligibility: Lorem ipsum dolor sit.</p>
+          <button class="btn" onclick="openModal('modal2')">Learn More</button>
+      </div>
+  
+      <!-- Scholarship 3 -->
+      <div class="scholarship">
+          <h2>DEANS LIST</h2>
+          <p>Eligibility: Lorem ipsum dolor sit.</p>
+          <button class="btn" onclick="openModal('modal3')">Learn More</button>
+      </div>
+  
+      <!-- Scholarship 4 -->
+      <div class="scholarship">
+          <h2>HIGHS SCHOOL</h2>
+          <p>Eligibility: Lorem ipsum dolor sit.</p>
+          <button class="btn" onclick="openModal('modal4')">Learn More</button>
+      </div>
+  
+      <!-- Scholarship 5 -->
+      <div class="scholarship">
+          <h2>SHS SCHOLARSHIP</h2>
+          <p>Eligibility: Lorem ipsum dolor sit.</p>
+          <button class="btn" onclick="openModal('modal5')">Learn More</button>
+      </div>
+  </div>
+  </div>
+  <!-- Modal 1 -->
+  <div id="modal1" class="modal">
+      <div class="modal-content">
+          <span class="close" onclick="closeModal('modal1')">&times;</span>
+          <h2>Scholarship 1 Details</h2>
+          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin vel nibh dui. Curabitur ultricies vitae felis sit amet vehicula. Nam et arcu nec arcu ultricies fermentum.</p>
+          <button class="apply-btn" onclick="applyNow()">Apply</button>
+      </div>
+  </div>
+  
+  <!-- Modal 2 -->
+  <div id="modal2" class="modal">
+      <div class="modal-content">
+          <span class="close" onclick="closeModal('modal2')">&times;</span>
+          <h2>Scholarship 2 Details</h2>
+          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean scelerisque massa et quam dictum, ac viverra leo suscipit. Donec vestibulum consequat justo, at sagittis metus.</p>
+          <button class="apply-btn" onclick="applyNow()">Apply</button>
+      </div>
+  </div>
+  <!-- Modal 3 -->
+  <div id="modal3" class="modal">
+      <div class="modal-content">
+          <span class="close" onclick="closeModal('modal3')">&times;</span>
+          <h2>Scholarship 3 Details</h2>
+          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam tristique tincidunt magna sit amet pharetra. Sed convallis tortor et efficitur tristique. Nulla facilisi.</p>
+          <button class="apply-btn" onclick="applyNow()">Apply</button>
+      </div>
+  </div>
+  
+  <!-- Modal 4 -->
+  <div id="modal4" class="modal">
+      <div class="modal-content">
+          <span class="close" onclick="closeModal('modal4')">&times;</span>
+          <h2>Scholarship 4 Details</h2>
+          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce fringilla enim ut magna pharetra, at suscipit metus iaculis. Suspendisse potenti. Nulla ac libero non eros cursus.</p>
+          <button class="apply-btn" onclick="applyNow()">Apply</button>
+      </div>
+  </div>
+  
+  <!-- Modal 5 -->
+  <div id="modal5" class="modal">
+      <div class="modal-content">
+          <span class="close" onclick="closeModal('modal5')">&times;</span>
+          <h2>Scholarship 5 Details</h2>
+          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum vehicula est vel mi tristique, et faucibus enim ullamcorper. Integer ac velit sed odio egestas cursus.</p>
+          <button class="apply-btn" onclick="applyNow()">Apply</button>
+      </div>
+  </div>
+  
+  <script>
+      // Open modal
+      function openModal(modalId) {
+          var modal = document.getElementById(modalId);
+          modal.style.display = "block";
+      }
+  
+      // Close modal
+      function closeModal(modalId) {
+          var modal = document.getElementById(modalId);
+          modal.style.display = "none";
+      }
+  
+      // Close modal if user clicks outside of it
+      window.onclick = function(event) {
+          var modals = document.getElementsByClassName('modal');
+          for (var i = 0; i < modals.length; i++) {
+              if (event.target == modals[i]) {
+                  modals[i].style.display = "none";
+              }
+          }
+      }
+  
+      // Apply Now function (this can be modified to do something like open a form)
+      function applyNow() {
+          alert("Application process will be available soon.");
+      }
+  </script>
+    <!--sa baba nito ay ang mga requirements-->
+
+    <footer>
+      <div class="footer-container">
+        <div class="footer-section about">
+          <h2>About Us</h2>
+          <p>
+            A private, TESDA‑ and CHED‑accredited institution in Mangaldan (Serafica St.), founded in 1996. Offers vocational, undergraduate degrees in Education, Criminology, Engineering, IT, Tourism, and business—and also features a Special Studies online program 
+          </p>
+        </div>
+
+        <div class="footer-section contact">
+          <h2>Contact Us</h2>
+          <p><strong>Address:</strong>Salay, Mangaldan Pangasinan</p>
+          <p><strong>Email:</strong> romae_mdc@yahoo.com</p>
+          <p><strong>Phone:</strong> (075) 599 6367</p>
+        </div>
+
+        <div class="footer-section links">
+          <h2>Quick Links</h2>
+          <ul>
+            <li><a href="#">Admissions</a></li>
+            <li><a href="#">Academics</a></li>
+            <li><a href="#">Events</a></li>
+            <li><a href="#">Contact</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-section social">
+          <h2>Follow Us</h2>
+          <a href="#"><i class="fab fa-facebook"></i></a>
+          <a href="#"><i class="fab fa-twitter"></i></a>
+          <a href="#"><i class="fab fa-instagram"></i></a>
+          <a href="#"><i class="fab fa-linkedin"></i></a>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <p>&copy; 2025 Metro-Dagupan Collges. All rights reserved.</p>
+      </div>
+    </footer>
+  </body>
+</html>

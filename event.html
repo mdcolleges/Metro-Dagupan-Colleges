@@ -1,0 +1,406 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Events</title>
+  <style>
+    
+header{
+  position: sticky;
+  top: 0;
+  width: 100%;
+  color: white;
+  text-align: center;
+  font-size: 20px;
+  z-index: 1000;
+}
+.header {
+  background-color: #f7f7f7;
+  color: #3a4f24;
+  text-align: center;
+  padding: 20px 0;
+  font-size: 24px;
+  font-weight: bold;
+  text-transform: uppercase;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); 
+}
+.nav {
+  background-color: #3a4f24;
+  text-align: center;
+  padding: 10px 0;
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+}
+.nav a,
+.dropdown > a {
+  position: relative;
+  color: white;
+  text-decoration: none;
+  font-size: 18px;
+  padding: 10px 15px;
+  transition: color 0.3s ease;
+  display: flex;
+  align-items: center;
+}
+.nav a::after {
+  content: "";
+  position: absolute;
+  left: 50%;
+  bottom: 0;
+  width: 0;
+  height: 3px;
+  background-color: #ccc600;
+  transition: width 0.3s ease, left 0.3s ease;
+}
+.nav a:hover {
+  color: #ccc600;
+}
+.nav a:hover::after {
+  width: 100%;
+  left: 0;
+}
+.dropdown {
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: #3a4f24;
+  min-width: 150px;
+  box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+  z-index: 1;
+  top: 100%;
+  left: 0;
+}
+.dropdown-content a {
+  color: white;
+  padding: 10px;
+  text-decoration: none;
+  display: block;
+  text-align: left;
+}
+.dropdown:hover .dropdown-content {
+  display: block;
+}
+    body, html { margin:0; padding:0; font-family:'Helvetica Neue', sans-serif; scroll-behavior:smooth; color:#333; }
+    section.parallax {
+      position:relative; min-height:100vh;
+      background-attachment:fixed; background-size:cover; background-position:center;
+      display:flex; align-items:center; justify-content:center;
+    }
+    section.parallax {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+}
+
+.overlay {
+  position: relative;
+  z-index: 1;
+  padding: 0.3em 0.6em;
+  font-size: 3.5rem;
+  font-weight: 700;
+  color: #fff;
+}
+
+.overlay::before {
+  content: '';
+  position: absolute;
+  top: 0; left: 0;
+  width: 100%; height: 100%;
+  background: rgba(0, 0, 0, 0.5);
+  border-radius: 5px;
+  z-index: -1;
+}
+
+.readmore-btn {
+  position: relative;
+  z-index: 1;
+  margin-top: 20px;
+  padding: 14px 28px;
+  background: rgba(255,255,255,0.9);
+  border: none;
+  border-radius: 25px;
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: #333;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+  cursor: pointer;
+  transition: transform 0.3s ease;
+}
+
+.readmore-btn:hover {
+  transform: translateY(-2px) scale(1.03);
+  box-shadow: 0 8px 20px rgba(0,0,0,0.3);
+}
+
+    .overlay {
+      position:absolute; top:50%; left:50%; transform:translate(-50%,-50%);
+      font-size:3.5rem; font-weight:700; color:#fff;
+      text-shadow:2px 4px 8px rgba(0,0,0,0.7);
+      z-index:1;
+    }
+    .readmore-btn {
+      position:absolute; bottom:60px;
+      padding:14px 28px;
+      background:rgba(255,255,255,0.9);
+      border:none; border-radius:25px;
+      font-size:1.1rem; font-weight:600;
+      color:#333;
+      box-shadow:0 4px 12px rgba(0,0,0,0.2);
+      cursor:pointer; transition:.3s ease;
+      z-index:1;
+    }
+    .readmore-btn:hover {
+      background:#fff;
+      transform:translateY(-2px) scale(1.03);
+      box-shadow:0 8px 20px rgba(0,0,0,0.3);
+    }
+    .popup {
+      position:fixed; top:50%; left:50%;
+      transform:translate(-50%,-50%);
+      width:90%; max-width:1400px;
+      background:#fff; padding:30px 40px;
+      border-radius:8px;
+      box-shadow:0 24px 48px rgba(0,0,0,0.3);
+      display:none; z-index:200;
+      max-height:90vh; overflow-y:auto;
+    }
+    .popup img { width:100%; border-radius:4px; margin-bottom:20px; }
+    .popup h3 { font-size:2rem; margin-bottom:10px; }
+    .popup p { font-size:1.1rem; line-height:1.6; }
+    .close-btn {
+      position:absolute; top:16px; right:16px;
+      background:#ff5252; border:none;
+      border-radius:4px; color:#fff;
+      padding:6px 12px; cursor:pointer;
+      font-weight:600;
+    }
+    @media(max-width:1366px){ section.parallax { background-attachment: scroll; } }
+    section.parallax {
+  position: relative;
+  min-height: 100vh;
+  background-attachment: fixed;
+  background-size: cover;
+  background-position: center;
+  display: flex; align-items: center; justify-content: center;
+}
+
+.overlay {
+  position: absolute;
+  top:50%; left:50%;
+  transform: translate(-50%,-50%);
+  padding: 0.3em 0.6em;
+  font-size: 3.5rem;
+  font-weight:700;
+  color:#fff;
+  z-index:1;
+}
+
+.overlay::before {
+  content:'';
+  position:absolute;
+  top:0; left:0;
+  width:100%; height:100%;
+  background:rgba(0,0,0,0.5);
+  border-radius:5px;
+  z-index:-1;
+}
+/* footer */
+
+/* FOOTER */
+footer {
+  background: #3a4f24;
+  color: white;
+  padding: 20px 0;
+  font-family: Arial, sans-serif;
+}
+
+.footer-container {
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+  max-width: 1200px;
+  margin: auto;
+  padding: 20px;
+}
+
+.footer-section {
+  flex: 1;
+  min-width: 250px;
+  margin: 10px;
+}
+
+.footer-section h2 {
+  font-size: 18px;
+  margin-bottom: 15px;
+  border-bottom: 2px solid #FFD700;
+  display: inline-block;
+  padding-bottom: 5px;
+}
+
+.footer-section p, 
+.footer-section ul {
+  font-size: 14px;
+  line-height: 1.6;
+}
+
+.footer-section ul {
+  list-style: none;
+  padding: 0;
+}
+
+.footer-section ul li {
+  margin-bottom: 8px;
+}
+
+.footer-section ul li a {
+  color: white;
+  text-decoration: none;
+  transition: 0.3s;
+}
+
+.footer-section ul li a:hover {
+  color: #FFD700;
+}
+
+.footer-section .social a {
+  color: white;
+  margin-right: 10px;
+  font-size: 20px;
+  transition: 0.3s;
+}
+
+.footer-section .social a:hover {
+  color: #FFD700;
+}
+
+.footer-bottom {
+  text-align: center;
+  margin-top: 20px;
+  padding: 10px;
+  border-top: 1px solid #FFD700;
+  font-size: 14px;
+}
+
+
+  </style>
+</head>
+<body>
+  <header>
+    <div class="header" id="stickyHeader">METRO-DAGUPAN COLLEGES</div>
+    <div class="nav">
+      <a href="index.html">Home</a>
+      <a href="about.html">About</a>
+      <a href="program.html">Programs</a>
+      <a href="#">Admissions</a>
+      <a href="course.html">Courses</a>
+      <a href="enroll-form.html">Enroll</a>
+      <div class="dropdown">
+        <a href="#">More ▼</a>
+        <div class="dropdown-content">
+          <a href="#">Alumni</a>
+          <a href="#">Events</a>
+          <a href="#">Research</a>
+        </div>
+      </div>
+      <a href="#">Contact</a>
+    </div>
+  </header>
+  
+<script>
+  const events = [
+    ['Events/crim.jpg','Crim Week','Crime prevention flair with mock drills and guest speakers.','crim_large.jpg'],
+    ['Events/highschoolweek.jpg','Highschool Week','Career guidance, athletics and alumni meet-up.','highschool_large.jpg'],
+    ['Events/palaro.jpg','Palaro','Energetic sports fest with basketball, volleyball & more.','palaro_large.jpg'],
+   ['Events/comsci.jpg','CBAT Week','Business-case meets startup vibes and networking.','cbat_large.jpg'],
+    ['Events/buwan.jpg','Buwan ng Wika','Cultural showcase of Filipino language and heritage.','buwan_large.jpg'],
+    ['Events/pailaw.jpg','Pailaw','Enchanting night of lanterns, lights & unity.','pailaw_large.jpg'],
+    ['Events/foundation.jpg','Foundation Day','Celebrate our school’s history with fun ceremonies.','foundation_large.jpg'],
+    ['Events/coronation.jpg','Mr. and Ms. MDC','Commencement ceremonies to honour student achievements.','graduation_large.jpg'],
+    ['Events/graduation.jpg','Graduation','Commencement ceremonies to honour student achievements.','graduation_large.jpg']
+  ];
+  events.forEach(e => {
+    document.write(`
+      <section class="parallax" style="background-image:url('${e[0]}')" data-heading="${e[1]}" data-text="${e[2]}" data-img="${e[3]}">
+        <div class="overlay">${e[1]}</div>
+        <button class="readmore-btn">Read more</button>
+      </section>
+    `);
+  });
+</script>
+<div class="popup" id="popup">
+  <button class="close-btn">X</button>
+  <h3 id="popup-title"></h3>
+  <img id="popup-img" src="" alt="">
+  <p id="popup-text"></p>
+</div>
+<script>
+  document.addEventListener('click', e => {
+    if (e.target.matches('.readmore-btn')) {
+      const sec = e.target.closest('.parallax');
+      document.getElementById('popup-title').textContent = sec.dataset.heading;
+      document.getElementById('popup-text').textContent = sec.dataset.text;
+      document.getElementById('popup-img').src = sec.dataset.img;
+      document.getElementById('popup').style.display = 'block';
+    }
+    if (e.target.matches('.close-btn')) {
+      document.getElementById('popup').style.display = 'none';
+    }
+  });
+</script>
+
+<footer>
+  <div class="footer-container">
+    <div class="footer-section about">
+      <h2>About Us</h2>
+      <p>
+        Lorem ipsum dolor sit amet consectetur, adipisicing elit. Iste
+        distinctio eius enim dolor exercitationem dolores sed laborum
+        aperiam voluptate perspiciatis!
+      </p>
+    </div>
+
+    <div class="footer-section contact">
+      <h2>Contact Us</h2>
+      <p><strong>Address:</strong>Salay, Mangaldan Pangasinan</p>
+      <p><strong>Email:</strong> romae_mdc@yahoo.com</p>
+      <p><strong>Phone:</strong> (075) 599 6367</p>
+    </div>
+
+    <div class="footer-section links">
+      <h2>Quick Links</h2>
+      <ul>
+        <li><a href="#">Admissions</a></li>
+        <li><a href="#">Academics</a></li>
+        <li><a href="#">Events</a></li>
+        <li><a href="#">Contact</a></li>
+      </ul>
+    </div>
+
+    <div class="footer-section social">
+      <h2>Follow Us</h2>
+      <a href="#"><i class="fab fa-facebook"></i></a>
+      <a href="#"><i class="fab fa-twitter"></i></a>
+      <a href="#"><i class="fab fa-instagram"></i></a>
+      <a href="#"><i class="fab fa-linkedin"></i></a>
+    </div>
+  </div>
+
+  <div class="footer-bottom">
+    <p>&copy; 2025 Metro-Dagupan Collges. All rights reserved.</p>
+  </div>
+</footer>
+</body>
+</html>
